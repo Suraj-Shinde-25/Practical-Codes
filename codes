@@ -1,0 +1,439 @@
+Write HTML Programs to design different geometrical shapes using Canvas and SVG
+<div class="d1">
+            <svg width="400" height="100">
+                <circle cx="50" cy="50" r="50" fill="purple"/>
+            </svg>
+            <hr>
+            <svg width="400" height="150">
+                <rect width="300" height="150" style="fill:rgb(0, 238, 255);stroke-width:5;stroke:rgb(0,0,0)" />
+            </svg>
+            <hr>
+            <svg width="400" height="180">
+                <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+                style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            </svg>
+            <hr>
+            <svg width="300" height="200">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:rgb(234, 255, 4); stroke:rgb(255, 0, 0);stroke-width:5;" />
+            </svg>
+        </div>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.</canvas>
+            
+            <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,100);
+            ctx.stroke();
+        </script>
+
+Program to design form using HTML5 elements, attributes and Semantics tags and apply HTML5 validation to it
+ <html>
+
+  <head>
+    <title>HTML5 Form</title>
+  </head>
+  <body>
+    <h1>HTML5 Form</h1>
+
+    <form action="#" method="post">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100" required />
+      </div>
+
+      <div>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">-- Select --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <div>
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
+
+Implement Transformation using Translation, Rotation and Scaling in your web page.
+ <html>
+<head>
+    <title>Transformation Demo</title>
+    <style>
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement"></div>
+    <button onclick="translate()">Translate</button>
+    <button onclick="rotate()">Rotate</button>
+    <button onclick="scale()">Scale</button>
+
+    <script src="Q7.js"></script>
+</body>
+</html>
+unction translate() {
+    var element = document.getElementById("myElement");
+    element.style.transform = "translate(50px, 50px)";
+}
+
+function rotate() {
+    var element = document.getElementById("myElement");
+    element.style.transform = "rotate(45deg)";
+}
+
+function scale() {
+    var element = document.getElementById("myElement");
+    element.style.transform = "scale(1.5)";
+}
+
+
+Program to show current date and time using user defined module in AngularJs. 
+<!DOCTYPE html>
+<html ng-app="DateTimeApp">
+<head>
+  <script src="angular.min.js"></script>
+  <script src="Q7.js"></script>
+</head>
+<body>
+  <div ng-controller="DateTimeController">
+    <h1>Current Date and Time</h1>
+    <p>{{ currentDate | date:'fullDate' }}</p>
+    <p>{{ currentTime | date:'mediumTime' }}</p>
+  </div>
+</body>
+
+</html>
+// app.js
+angular.module('DateTimeApp', [])
+  .controller('DateTimeController', ['$scope', '$interval', function($scope, $interval) {
+    $interval(function() {
+      $scope.currentDate = new Date();
+      $scope.currentTime = new Date();
+    }, 1000);
+  }]);
+
+Write calculator program in AngularJs to perform basic arithmetic operations(+, -, *, /) using angular controller function.
+<html ng-app="calculatorApp">
+<head>
+    <title>AngularJS Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script>
+        angular.module('calculatorApp', [])
+            .controller('CalculatorController', function ($scope) {
+                $scope.num1 = 0;
+                $scope.num2 = 0;
+                $scope.result = 0;
+
+                $scope.add = function () {
+                    $scope.result = $scope.num1 + $scope.num2;
+                };
+
+                $scope.subtract = function () {
+                    $scope.result = $scope.num1 - $scope.num2;
+                };
+
+                $scope.multiply = function () {
+                    $scope.result = $scope.num1 * $scope.num2;
+                };
+
+                $scope.divide = function () {
+                    $scope.result = $scope.num1 / $scope.num2;
+                };
+            });
+    </script>
+</head>
+<body ng-controller="CalculatorController">
+    <h1>AngularJS Calculator</h1>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" ng-model="num1">
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" ng-model="num2">
+    <br>
+    <button ng-click="add()">Add</button>
+    <button ng-click="subtract()">Subtract</button>
+    <button ng-click="multiply()">Multiply</button>
+    <button ng-click="divide()">Divide</button>
+    <br>
+    <label for="result">Result:</label>
+    <input type="number" id="result" ng-model="result" disabled>
+</body>
+</html>
+
+Program using NPM which will convert entered string into either case.
+<html>
+<head>
+    <title>String Case Converter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script>
+        function convertString() {
+            var inputString = document.getElementById('inputString').value;
+            var lowercaseString = _.toLower(inputString); 
+            var uppercaseString = _.toUpper(inputString);
+
+            document.getElementById('lowercaseResult').textContent = lowercaseString;
+            document.getElementById('uppercaseResult').textContent = uppercaseString;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>String Case Converter</h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+
+    <button onclick="convertString()">Convert</button>
+
+    <h2>Lowercase:</h2>
+    <div id="lowercaseResult"></div>
+
+    <h2>Uppercase:</h2>
+    <div id="uppercaseResult"></div>
+</body>
+
+</html>
+
+Write a program to create a calculator using Angular
+/* app.component.css */
+/* Angular calculator */
+button{
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+}
+input{
+    width: 237px;   
+    height: 30px;
+}
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+<!-- app.component.html -->
+<div class="calculator">
+  <h2>Calculator</h2>
+  <input type="text" [(ngModel)]="display" readonly>
+  <div class="buttons">
+    <hr>
+    <button (click)="addToDisplay('1')">1</button>
+    <button (click)="addToDisplay('2')">2</button>
+    <button (click)="addToDisplay('3')">3</button>
+    <button (click)="addToDisplay('4')">4</button>
+    <button (click)="addToDisplay('5')">5</button>  <hr>
+    <button (click)="addToDisplay('6')">6</button>
+    <button (click)="addToDisplay('7')">7</button>
+    <button (click)="addToDisplay('8')">8</button>
+    <button (click)="addToDisplay('9')">9</button>
+    <button (click)="addToDisplay('0')">0</button>  <hr>
+    <button (click)="addToDisplay('+')">+</button>
+    <button (click)="addToDisplay('-')">-</button>
+    <button (click)="addToDisplay('*')">*</button>
+    <button (click)="addToDisplay('/')">/</button>
+    <button (click)="clearDisplay()">C</button>   <hr>
+    <button (click)="calculateResult()">=</button>
+  </div>
+</div>
+
+// app.componentspec.ts
+import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  beforeEach(() => TestBed.configureTestingModule({
+    declarations: [AppComponent]
+  }));
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'calculator-app'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('calculator-app');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.content span')?.textContent).toContain('calculator-app app is running!');
+  });
+});
+
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  display: string = '';
+
+  addToDisplay(value: string) {
+    this.display += value;
+  }
+
+  clearDisplay() {
+    this.display = '';
+  }
+
+  calculateResult() {
+    try {
+      this.display = eval(this.display);
+    } catch (e) {
+      this.display = 'Error';
+    }
+  }
+}
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';;
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+  FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+Write a program to create a calculator using Node JS. (Install and configure Node JS and Server) 
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Enter the first number: ', (num1) => {
+  rl.question('Enter the second number: ', (num2) => {
+    rl.question('Enter the operation (+, -, *, /): ', (operator) => {
+      const n1 = parseFloat(num1);
+      const n2 = parseFloat(num2);
+
+      let result;
+
+      switch (operator) {
+        case '+':
+          result = n1 + n2;
+          break;
+        case '-':
+          result = n1 - n2;
+          break;
+        case '*':
+          result = n1 * n2;
+          break;
+        case '/':
+          result = n1 / n2;
+          break;
+        default:
+          console.log('Invalid operator');
+          rl.close();
+          return;
+      }
+
+      console.log(`Result: ${result}`);
+
+      rl.close();
+    });
+  });
+});
+
+Program for basic operations, array and user interface handling.
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function performBasicOperations() {
+  rl.question('Enter two numbers: ', (input) => {
+    const numbers = input.split(' ').map(Number);
+
+    const sum = numbers[0] + numbers[1];
+    const difference = numbers[0] - numbers[1];
+    const product = numbers[0] * numbers[1];
+    const quotient = numbers[0] / numbers[1];
+
+    console.log('Sum:', sum);
+    console.log('Difference:', difference);
+    console.log('Product:', product);
+    console.log('Quotient:', quotient);
+
+    rl.close();
+  });
+}
+
+function manipulateArray() {
+  rl.question('Enter elements of an array (space-separated): ', (input) => {
+    const array = input.split(' ');
+
+    console.log('Array:', array);
+    console.log('Length:', array.length);
+    console.log('First element:', array[0]);
+    console.log('Last element:', array[array.length - 1]);
+
+    rl.close();
+  });
+}
+
+function handleUserInterface() {
+  rl.question('Choose an operation: 1. Basic Operations 2. Array Manipulation ', (choice) => {
+    if (choice === '1') {
+      performBasicOperations();
+    } else if (choice === '2') {
+      manipulateArray();
+    } else {
+      console.log('Invalid choice! Please try again.');
+      handleUserInterface();
+    }
+  });
+}
+
+handleUserInterface(); 
+
